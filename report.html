@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inspection Reports</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <h3>Inspection Portal</h3>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="#" onclick="navigateTo('dashboard')">Dashboard</a></li>
+                <li><a href="#" onclick="navigateTo('inspection')">New Inspection</a></li>
+                <li><a href="#" onclick="navigateTo('report')">Reports</a></li>
+                <li><a href="#" onclick="logout()">Logout</a></li>
+            </ul>
+        </nav>
+        <main class="main-content">
+            <header class="top-navbar">
+                <h1>Inspection Reports</h1>
+                <div class="user-info">Welcome, Inspector</div>
+            </header>
+            <div class="reports-container">
+                <div id="reportsList">
+                    <!-- Reports will be dynamically added here -->
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Industrial Inspection Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <h3>Inspection Portal</h3>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="#" onclick="navigateTo('dashboard')">Dashboard</a></li>
+                <li><a href="#" onclick="navigateTo('inspection')">New Inspection</a></li>
+                <li><a href="#" onclick="navigateTo('report')">Reports</a></li>
+                <li><a href="#" onclick="logout()">Logout</a></li>
+            </ul>
+        </nav>
+        <main class="main-content">
+            <header class="top-navbar">
+                <h1>Industrial Inspection Dashboard</h1>
+                <div class="user-info">Welcome, Inspector</div>
+            </header>
+            <div class="dashboard-content">
+                <div class="analytics-cards">
+                    <div class="card">
+                        <h3>Total Plots</h3>
+                        <p id="totalPlots">0</p>
+                    </div>
+                    <div class="card">
+                        <h3>Completed Inspections</h3>
+                        <p id="completedInspections">0</p>
+                    </div>
+                    <div class="card">
+                        <h3>Pending Inspections</h3>
+                        <p id="pendingInspections">0</p>
+                    </div>
+                    <div class="card">
+                        <h3>High-Risk Alerts</h3>
+                        <p id="highRiskAlerts">0</p>
+                    </div>
+                </div>
+                <div class="plots-section">
+                    <h2>Industrial Plots</h2>
+                    <div id="plotsContainer" class="plots-grid">
+                        <!-- Plots will be dynamically added here -->
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

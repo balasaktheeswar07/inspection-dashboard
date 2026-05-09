@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Inspection</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <h3>Inspection Portal</h3>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="#" onclick="navigateTo('dashboard')">Dashboard</a></li>
+                <li><a href="#" onclick="navigateTo('inspection')">New Inspection</a></li>
+                <li><a href="#" onclick="navigateTo('report')">Reports</a></li>
+                <li><a href="#" onclick="logout()">Logout</a></li>
+            </ul>
+        </nav>
+        <main class="main-content">
+            <header class="top-navbar">
+                <h1>New Inspection</h1>
+                <div class="user-info">Welcome, Inspector</div>
+            </header>
+            <div class="form-container">
+                <form id="inspectionForm" class="inspection-form">
+                    <div class="form-group">
+                        <label for="inspectorName">Inspector Name</label>
+                        <input type="text" id="inspectorName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="plotId">Plot ID</label>
+                        <input type="text" id="plotId" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="constructionStatus">Construction Status</label>
+                        <select id="constructionStatus" required>
+                            <option value="">Select Status</option>
+                            <option value="ongoing">Ongoing</option>
+                            <option value="completed">Completed</option>
+                            <option value="delayed">Delayed</option>
+                            <option value="halted">Halted</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="remarks">Remarks</label>
+                        <textarea id="remarks" rows="4"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="geoLocation">Geo-Location</label>
+                        <input type="text" id="geoLocation" placeholder="Latitude, Longitude" readonly>
+                        <button type="button" onclick="getLocation()" class="btn-secondary">Get Location</button>
+                    </div>
+                    <div class="form-group">
+                        <label for="imageUpload">Upload Image</label>
+                        <input type="file" id="imageUpload" accept="image/*">
+                        <div id="imagePreview" class="image-preview"></div>
+                    </div>
+                    <div class="form-group">
+                        <label>Compliance Checklist</label>
+                        <div class="checklist">
+                            <label><input type="checkbox" name="compliance" value="safety"> Safety Standards</label>
+                            <label><input type="checkbox" name="compliance" value="environmental"> Environmental Compliance</label>
+                            <label><input type="checkbox" name="compliance" value="structural"> Structural Integrity</label>
+                            <label><input type="checkbox" name="compliance" value="permits"> Permits & Licenses</label>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-primary">Submit Inspection</button>
+                </form>
+            </div>
+        </main>
+    </div>
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Inspection Submitted Successfully!</h2>
+            <p>Your inspection has been recorded and the dashboard has been updated.</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
